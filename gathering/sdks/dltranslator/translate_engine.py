@@ -11,7 +11,6 @@ from pydantic import BaseModel
 from qpyone.builtins import iotools
 from qpyone.builtins import listtools
 
-
 WORDS_LIMITATION = 5000
 langs_dict = GoogleTranslator().get_supported_languages(as_dict=True)
 
@@ -23,10 +22,12 @@ class TranslateOption(BaseModel):
     source: Optional[str] = "auto"
     target: Optional[str] = "zh-CN"
     engine: Optional[str] = "google"
+    source_file: Optional[str] = ""
+    target_file: Optional[str] = ""
 
 
 ## https://deep-translator.readthedocs.io/en/latest/usage.html
-class Translater:
+class Translator:
     def __init__(self, options=TranslateOption()):
         self.options = options
 
