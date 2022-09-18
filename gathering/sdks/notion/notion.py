@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from fsdk.notion.api.notion_endpoint import *
-from fluentqpy.clients.http.client import BaseHttpClient, HttpClient, AsyncHttpClient, HttpClientOption
-from fluentqpy.config import settings
+from .api.notion_endpoint import *
+from qpyone.clients.http.client import BaseHttpClient, HttpClient, AsyncHttpClient, HttpClientOption
+from qpyone.config import settings
 
 base_url_v1: str = "https://api.notion.com/v1"
 auth = {"Authorization": f'Bearer {settings.notion_token}'}
