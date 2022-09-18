@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from gathering.sdks.notion.notion import notion_sdk, async_notion_sdk
+from gathering.sdks.notion.notion import async_notion_sdk
+from gathering.sdks.notion.notion import notion_sdk
 from qpyone.config import settings
 
 
 class TestNotionSdk:
-
     def test_secret_loading(self):
         assert settings.notion_token is not None
 

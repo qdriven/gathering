@@ -3,7 +3,8 @@
 import asyncio
 
 from gathering.sdks.httpbin.api.httpmethod import HttpMethodService
-from qpyone.clients.http.client import HttpClient, AsyncHttpClient
+from qpyone.clients.http.client import AsyncHttpClient
+from qpyone.clients.http.client import HttpClient
 
 
 class TestHttpBinSdk:

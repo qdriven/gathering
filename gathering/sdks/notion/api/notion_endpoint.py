@@ -2,13 +2,12 @@
 # -*- coding:utf-8 -*-
 from typing import Any
 
+from qpyone.builtins.dicts.dicttools import pick_by_keys
 from qpyone.clients.http.models import SyncAsync
 from qpyone.core.service import BaseRpcService
-from qpyone.builtins.dicts.dicttools import pick_by_keys
 
 
 class BlocksChildrenEndpoint(BaseRpcService):
-
     def append(self, block_id: str, **kwargs: Any) -> SyncAsync[Any]:
         """Create and append new children blocks to the block using the ID specified.
 
@@ -18,7 +17,8 @@ class BlocksChildrenEndpoint(BaseRpcService):
             path=f"blocks/{block_id}/children",
             method="PATCH",
             body=pick_by_keys(kwargs, "children"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
     def list(self, block_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -27,16 +27,15 @@ class BlocksChildrenEndpoint(BaseRpcService):
         *[🔗 Endpoint documentation](https://developers.notion.com/reference/get-block-children)*
         """  # noqa: E501
         return self.invoker.request(
-
             path=f"blocks/{block_id}/children",
             method="GET",
             query=pick_by_keys(kwargs, "start_cursor", "page_size"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
 
 class BlocksEndpoint(BaseRpcService):
-
     def __init__(self, invoker: Any, **kwargs: Any) -> None:
         super(BlocksEndpoint, self).__init__(invoker, **kwargs)
         self.children = BlocksChildrenEndpoint(invoker, **kwargs)
@@ -89,7 +88,8 @@ class BlocksEndpoint(BaseRpcService):
                 "synced_block",
                 "table",
             ),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
     def delete(self, block_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -100,7 +100,8 @@ class BlocksEndpoint(BaseRpcService):
         return self.invoker.request(
             path=f"blocks/{block_id}",
             method="DELETE",
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
 
@@ -116,8 +117,9 @@ class DatabasesEndpoint(BaseRpcService):
             path="databases",
             method="GET",
             query=pick_by_keys(kwargs, "start_cursor", "page_size"),
-            auth=kwargs.get("auth"),base_url=self.base_url,
-            headers={"Notion-Version": "2021-08-16"}
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
+            headers={"Notion-Version": "2021-08-16"},
         )
 
     def query(self, database_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -129,7 +131,8 @@ class DatabasesEndpoint(BaseRpcService):
             path=f"databases/{database_id}/query",
             method="POST",
             body=pick_by_keys(kwargs, "filter", "sorts", "start_cursor", "page_size"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
     def retrieve(self, database_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -150,7 +153,8 @@ class DatabasesEndpoint(BaseRpcService):
             path="databases",
             method="POST",
             body=pick_by_keys(kwargs, "parent", "title", "properties", "icon", "cover"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
     def update(self, database_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -162,7 +166,8 @@ class DatabasesEndpoint(BaseRpcService):
             path=f"databases/{database_id}",
             method="PATCH",
             body=pick_by_keys(kwargs, "properties", "title", "icon", "cover"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
 
@@ -175,7 +180,8 @@ class PagesPropertiesEndpoint(BaseRpcService):
         return self.invoker.request(
             path=f"pages/{page_id}/properties/{property_id}",
             method="GET",
-            auth=kwargs.get("auth"),base_url=self.base_url,
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
             query=pick_by_keys(kwargs, "start_cursor", "page_size"),
         )
 
@@ -193,8 +199,11 @@ class PagesEndpoint(BaseRpcService):
         return self.invoker.request(
             path="pages",
             method="POST",
-            body=pick_by_keys(kwargs, "parent", "properties", "children", "icon", "cover"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            body=pick_by_keys(
+                kwargs, "parent", "properties", "children", "icon", "cover"
+            ),
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
     def retrieve(self, page_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -215,7 +224,8 @@ class PagesEndpoint(BaseRpcService):
             path=f"pages/{page_id}",
             method="PATCH",
             body=pick_by_keys(kwargs, "archived", "properties", "icon", "cover"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
 
@@ -229,7 +239,8 @@ class UsersEndpoint(BaseRpcService):
             path="users",
             method="GET",
             query=pick_by_keys(kwargs, "start_cursor", "page_size"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )
 
     def retrieve(self, user_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -260,6 +271,9 @@ class SearchEndpoint(BaseRpcService):
         return self.invoker.request(
             path="search",
             method="POST",
-            body=pick_by_keys(kwargs, "query", "sort", "filter", "start_cursor", "page_size"),
-            auth=kwargs.get("auth"),base_url=self.base_url
+            body=pick_by_keys(
+                kwargs, "query", "sort", "filter", "start_cursor", "page_size"
+            ),
+            auth=kwargs.get("auth"),
+            base_url=self.base_url,
         )

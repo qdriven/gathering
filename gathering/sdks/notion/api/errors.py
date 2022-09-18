@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from enum import Enum
 from typing import Optional
+
+from enum import Enum
 
 from h11._headers import Headers
 from httpx import Response
@@ -56,4 +57,3 @@ class APIResponseError(HTTPResponseError):
 
 def is_api_error(code: str) -> bool:
     return isinstance(code, str) and code in (error.value for error in APIErrorCode)
-

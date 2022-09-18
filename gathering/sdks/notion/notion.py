@@ -1,23 +1,25 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from .api.notion_endpoint import *
-from qpyone.clients.http.client import BaseHttpClient, HttpClient, AsyncHttpClient, HttpClientOption
+from qpyone.clients.http.client import AsyncHttpClient
+from qpyone.clients.http.client import BaseHttpClient
+from qpyone.clients.http.client import HttpClient
+from qpyone.clients.http.client import HttpClientOption
 from qpyone.config import settings
 
-base_url_v1: str = "https://api.notion.com/v1"
-auth = {"Authorization": f'Bearer {settings.notion_token}'}
+from .api.notion_endpoint import *
 
-notion_options = HttpClientOption(
-    auth=auth,
-    headers={"Notion-Version": "2022-02-22"}
-)
+
+base_url_v1: str = "https://api.notion.com/v1"
+auth = {"Authorization": f"Bearer {settings.notion_token}"}
+
+notion_options = HttpClientOption(auth=auth, headers={"Notion-Version": "2022-02-22"})
 
 
 class NotionSdk:
-
-    def __init__(self, client: BaseHttpClient = HttpClient(options=notion_options),
-                 **kwargs):
+    def __init__(
+        self, client: BaseHttpClient = HttpClient(options=notion_options), **kwargs
+    ):
         self.http_client = client
         self.options = kwargs if kwargs else {}
         self.blocks = BlocksEndpoint(invoker=client, **kwargs)

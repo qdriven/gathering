@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 from gql import gql
 
+
 STAR_QUERY = gql(
     """
         query ($username: String!, $after: String) {
