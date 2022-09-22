@@ -65,7 +65,7 @@ coverage = "^6.4.2"
 coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 safety = "^2.1.1"
-pylint = "^2.14.5"
+pylint = "^2.15.3"
 black = { version = "^22.6.0", allow-prereleases = true }
 darglint = "^1.8.1"
 isort = { extras = ["colors"], version = "^5.10.1" }
