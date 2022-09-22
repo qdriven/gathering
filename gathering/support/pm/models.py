@@ -247,3 +247,10 @@ class PostmanCollection(QBaseModel):
     info: Info = None
     item: List[Union[Item, ItemGroup]] = None
     event: List[Event] = None
+
+
+class SimplePostmanCollection(QBaseModel):
+    """
+    TODO: to simplify the postman model
+    """
+    pass
