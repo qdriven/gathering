@@ -372,6 +372,18 @@ docs = ["furo (>=2022.6.21)", "sphinx (>=5.1.1)", "sphinx-autodoc-typehints (>=1
 testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pytest-cov (>=3)", "pytest-timeout (>=2.1)"]
 
 [[package]]
+name = "fire"
+version = "0.4.0"
+description = "A library for automatically generating command line interfaces."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+termcolor = "*"
+
+[[package]]
 name = "flatdict"
 version = "4.0.1"
 description = "Python module for interacting with nested dicts as a single level dict with delimited keys."
@@ -1355,7 +1367,7 @@ mpmath = ">=0.19"
 name = "termcolor"
 version = "2.0.1"
 description = "ANSI color formatting for output in terminal"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -1547,7 +1559,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "fc68768846c74b1e60cd7143fbd1c2ead311b541f6fbb48c7bd856b901a1d811"
+content-hash = "7fc5ceda48219eaad0045d1a1f729993aad88fcc821ca528b0cbf2427514822c"
 
 [metadata.files]
 allure-pytest = [
@@ -1823,6 +1835,9 @@ faker = [
 filelock = [
     {file = "filelock-3.8.0-py3-none-any.whl", hash = "sha256:617eb4e5eedc82fc5f47b6d61e4d11cb837c56cb4544e39081099fa17ad109d4"},
     {file = "filelock-3.8.0.tar.gz", hash = "sha256:55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc"},
+]
+fire = [
+    {file = "fire-0.4.0.tar.gz", hash = "sha256:c5e2b8763699d1142393a46d0e3e790c5eb2f0706082df8f647878842c216a62"},
 ]
 flatdict = [
     {file = "flatdict-4.0.1.tar.gz", hash = "sha256:cd32f08fd31ed21eb09ebc76f06b6bd12046a24f77beb1fd0281917e47f26742"},

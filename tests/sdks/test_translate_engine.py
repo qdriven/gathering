@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import os.path
 
-from gathering.sdks.dltranslator.translate_engine import Translater
+from gathering.sdks.dltranslator.translate_engine import Translator
 
 
 BASE_PATH = os.path.dirname(__file__).replace("/tests", "")
@@ -24,6 +24,6 @@ file_list = [
 def test_translate():
     for file_md_name in file_list:
         print("current file is {}".format(file_md_name))
-        Translater().translate(
+        Translator().translate(
             source_prefix + "/" + file_md_name, target_prefix + "/" + file_md_name
         )
