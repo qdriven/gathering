@@ -1,6 +1,10 @@
 from __future__ import annotations
+
+from typing import Any
+from typing import List
+from typing import Union
+
 from enum import Enum
-from typing import Union, List, Any
 
 from pydantic import Field
 from qpyone.core.models import QBaseModel
@@ -253,4 +257,5 @@ class SimplePostmanCollection(QBaseModel):
     """
     TODO: to simplify the postman model
     """
+
     pass

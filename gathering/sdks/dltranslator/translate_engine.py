@@ -11,6 +11,7 @@ from pydantic import BaseModel
 from qpyone.builtins import iotools
 from qpyone.builtins import listtools
 
+
 WORDS_LIMITATION = 5000
 langs_dict = GoogleTranslator().get_supported_languages(as_dict=True)
 
