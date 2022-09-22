@@ -67,4 +67,5 @@
 
 ## postman
 
-- -[X] [postman-parser]( https://github.com/appknox/postmanparser.git)
+- [X] [postman-parser]( https://github.com/appknox/postmanparser.git)
+- [] [postman-runner](https://github.com/codeasashu/python-postman-parser.git)
