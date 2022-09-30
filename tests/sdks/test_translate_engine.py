@@ -7,17 +7,11 @@ from gathering.sdks.dltranslator.translate_engine import Translator
 
 BASE_PATH = os.path.dirname(__file__).replace("/tests", "")
 print(BASE_PATH)
-source_prefix = "../docs/ecoinvent/en/data-quality"
-target_prefix = "../docs/ecoinvent/cn/data-quality"
+source_prefix = "../../docs/qabase/en"
+target_prefix = "../../docs/qabase/cn"
 file_name = "6. Completeness.md"
 file_list = [
-    "7-Good-Practice-Documentation.md",
-    "8.language.md",
-    "9.naming-conventions.md",
-    "10.default-values-basic-uncentainty.md",
-    "11.special-condition.md",
-    "12.validation-review.md",
-    "13.embedding-new-dataset.md",
+    "org-software.md",
 ]
 
 
