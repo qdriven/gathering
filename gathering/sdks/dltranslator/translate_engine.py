@@ -32,7 +32,7 @@ class TranslateOption(BaseModel):
 class Translator:
     def __init__(self, options=TranslateOption()):
         self.options = options
-        self.engine = YandexTranslator
+        self.engine = GoogleTranslator
 
     def translate_paragraph(self, paragraph: Union[str | List[str]]):
         """

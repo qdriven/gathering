@@ -11,7 +11,7 @@ source_prefix = "../../docs/qabase/en"
 target_prefix = "../../docs/qabase/cn"
 file_name = "6. Completeness.md"
 file_list = [
-    "org-software.md",
+    "2-concurrent-testing.md",
 ]
 
 
