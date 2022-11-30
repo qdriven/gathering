@@ -24,7 +24,7 @@
 
 ## sdk client
 - [bubble-client](https://github.com/Refty/bubble-client.git)
-
+- [translator] (https://github.com/UlionTse/translators.git)
 ## Toolkits:
 - https://github.com/HansBug/argsloader.git
 - https://github.com/saadmk11/changelog-ci.git
