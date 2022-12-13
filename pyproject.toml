@@ -38,7 +38,7 @@ qpyone = { path = "dep/qpyone-0.1.0.tar.gz" }
 deep-translator = "^1.9.0"
 "github3.py" = "^3.2.0"
 gql = "^3.4.0"
-fire = "^0.4.0"
+fire = "^0.5.0"
 
 [tool.poetry.dev-dependencies]
 sympy = "^1.10.1"
