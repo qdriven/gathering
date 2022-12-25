@@ -5,13 +5,13 @@ from qpyone.clients.http.client import AsyncHttpClient
 from qpyone.clients.http.client import BaseHttpClient
 from qpyone.clients.http.client import HttpClient
 from qpyone.clients.http.client import HttpClientOption
-from qpyone.config import settings
+from qpyone.config import configs
 
 from .api.notion_endpoint import *
 
 
 base_url_v1: str = "https://api.notion.com/v1"
-auth = {"Authorization": f"Bearer {settings.notion_token}"}
+auth = {"Authorization": f"Bearer {configs.notion_token}"}
 
 notion_options = HttpClientOption(auth=auth, headers={"Notion-Version": "2022-02-22"})
 

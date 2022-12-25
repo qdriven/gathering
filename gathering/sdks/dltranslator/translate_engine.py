@@ -6,7 +6,7 @@ from typing import Union
 
 import time
 
-from deep_translator import GoogleTranslator
+from deep_translator import GoogleTranslator, YandexTranslator
 from pydantic import BaseModel
 from qpyone.builtins import iotools
 from qpyone.builtins import listtools
@@ -28,15 +28,17 @@ class TranslateOption(BaseModel):
 
 
 ## https://deep-translator.readthedocs.io/en/latest/usage.html
+## Auto Select Different Selector
 class Translator:
     def __init__(self, options=TranslateOption()):
         self.options = options
+        self.engine = GoogleTranslator
 
     def translate_paragraph(self, paragraph: Union[str | List[str]]):
         """
         Translate Paragraph
         """
-        result = GoogleTranslator(
+        result = self.engine(
             source=self.options.source, target=self.options.target
         ).translate(paragraph)
         return result
@@ -45,7 +47,7 @@ class Translator:
         """
         translate small files,less than 5000 words
         """
-        result = GoogleTranslator(
+        result = self.engine(
             source=self.options.source, target=self.options.target
         ).translate_file(source_file_path)
         iotools.write(result, target_file)
@@ -58,7 +60,7 @@ class Translator:
         print(result)
         batch_words = []
         trans_results = []
-        translator = GoogleTranslator(
+        translator = self.engine(
             source=self.options.source, target=self.options.target
         )
         words_counter = 0

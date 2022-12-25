@@ -24,7 +24,7 @@
 
 ## sdk client
 - [bubble-client](https://github.com/Refty/bubble-client.git)
-
+- [translator] (https://github.com/UlionTse/translators.git)
 ## Toolkits:
 - https://github.com/HansBug/argsloader.git
 - https://github.com/saadmk11/changelog-ci.git
@@ -65,7 +65,11 @@
 -  https://github.com/Refty/bubble-client.git
 
 
+## open-api
+- [] [openapi-client](https://github.com/openapi-generators/openapi-python-client.git)
+
 ## postman
 
 - [X] [postman-parser]( https://github.com/appknox/postmanparser.git)
 - [] [postman-runner](https://github.com/codeasashu/python-postman-parser.git)
+

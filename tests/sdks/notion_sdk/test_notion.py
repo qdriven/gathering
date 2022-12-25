@@ -2,12 +2,12 @@
 # -*- coding:utf-8 -*-
 from gathering.sdks.notion.notion import async_notion_sdk
 from gathering.sdks.notion.notion import notion_sdk
-from qpyone.config import settings
+from qpyone.config import configs
 
 
 class TestNotionSdk:
     def test_secret_loading(self):
-        assert settings.notion_token is not None
+        assert configs.notion_token is not None
 
     def test_notion_sdk(self):
         assert notion_sdk is not None
@@ -24,3 +24,7 @@ class TestNotionSdk:
 
     def test_create_db(self):
         pass
+
+    def test_upload_files(self):
+        pass
+

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
 from github3.repos import Repository
 from gql import Client
 from gql.transport.aiohttp import AIOHTTPTransport
